@@ -13,10 +13,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB (replace with your MongoDB URI)
-mongoose.connect('mongodb://localhost:27017/weather', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(process.env.MONGODB_URI);
+
 
 // Weather data schema
 const weatherSchema = new mongoose.Schema({
