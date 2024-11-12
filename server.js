@@ -13,7 +13,10 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB (replace with your MongoDB URI)
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 
 // Weather data schema
